@@ -1,4 +1,4 @@
-# Express-Lanes-Tolling-Feed-Specification
+# Express Lanes Tolling Feed Specification
 
 This document explains the types of files and data that comprise the Express Lanes Tolling Feed Specification (ELTFS) ("ELFS"? "TFS"?) and defines the fields used in all of those files.
 
@@ -15,12 +15,12 @@ The data sent and received to/from the API is sent as a JSON array of objects wi
 
 ## Express Lane Definition
 
-* toll_id : String
-* shortlabel : String - human-readable summary of this express lane
-* longlabel : String - human-readable verbose description of this express lane
-* Agency : String
-* location :  [{lat,lng}]
-* direction: [n|ne|e|se|s|sw|w|nw]
-* active_hours_start: Date
-* active_hours_end : Date
+* **toll_id** : String
+* **shortlabel** : String - human-readable summary of this express lane
+* **longlabel** : String - human-readable verbose description of this express lane
+* **Agency** : String
+* **location** :  [{lat,lng}]
+* **direction**: [n|ne|e|se|s|sw|w|nw]
+* **time_active_start**: long - number of seconds after midnight when this toll becomes active
+* **time_active_end** : long - number of seconds after midnight when this toll is no longer active
 * type: bridge|express lane

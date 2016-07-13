@@ -16,6 +16,8 @@ The data sent and received to/from the API is sent as a JSON array of objects wi
 ## Express Lane Definition
 
 * toll_id : String
+* shortlabel : String - human-readable summary of this express lane
+* longlabel : String - human-readable verbose description of this express lane
 * Agency : String
 * location :  [{lat,lng}]
 * direction: [n|ne|e|se|s|sw|w|nw]

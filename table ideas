@@ -1,11 +1,48 @@
-Hours of operations
-Location facility - lanes
-Plaza location
-direction
+hours_of_operations
+- times
+- corridor
+
+calendar_dates
+
+location facility
+ - lanes
+ - entrance lat/lng
+ - exit lat/lng
+ - extent (full length)
+ - Access Points
+ - toll sign lat/lng
+ - toll reader lat/lng
+ - type (bridge, express lane, ramp, toll road, tunnel, reversible lanes)
+
+Facility_id: [
+  {id : "CLW", label : "calaveras westbound", direction: "SB" },
+  {id : "FSE", label : "first street eastbound", direction: "WB" }
+]
+
+facility_corridor_shapes (polyline)
+
+toll_rates (describe dollar amounts, optional, used for fixed toll rates, based on vehicle axles)
+
+
+
 Toll rate update
-Toll rate definition, hov 2+, HOV 3+
+Toll rate definition, HOV 2+, HOV 3+
 Toll rules
 Zones
 Alerts or closures
+
 agency
+- agency_name
+- corridor
+
 transponder type
+
+
+
+
+vehicle exceptions
+ - electric (green (plugin hybrid) or white (cng, all electric))
+ - carpool (2+, 3+)
+ - motorcycle
+ - transit (busses)
+ - emergency vehicles

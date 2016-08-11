@@ -19,7 +19,26 @@ Facility_id: [
   {id : "FSE", label : "first street eastbound", direction: "WB" }
 ]
 
+facility_type:
+ - carpool lanes
+ - Ramp meters (future development and coordination with Caltrans)
+ - Carpool Ramp meters (subset of Ramp meter data, HOV lane at ramp meter)
+ - Express Lanes
+ - Toll Roads
+ - Bridges
+ - Tunnels
+ - Reversible Lanes (e.g. Lafayette St, City of Santa Clara)
+
 facility_corridor_shapes (polyline)
+ - shape_id
+ - shape_pt_lat
+ - shape_pt_long
+ - shape_pt_sequence
+ - shape_dist_traveled
+ 
+facilty_lanes
+ - shape_id
+ - lanes
 
 toll_rates (describe dollar amounts, optional, used for fixed toll rates, based on vehicle axles)
 
@@ -34,6 +53,10 @@ Alerts or closures
 agency
 - agency_name
 - corridor
+- agency_url
+- agency_timezone
+- agency_phone
+- agency_toll_url
 
 transponder type
 

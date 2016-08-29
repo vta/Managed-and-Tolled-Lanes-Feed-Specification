@@ -1,4 +1,4 @@
-# Managed Lanes Feed Specification
+# Managed and Tolled Lanes Feed Specification
 
 This document explains the types of files and data that comprise the Express Lanes Tolling Feed Specification (ELTFS) ("ELFS"? "TFS"?) and defines the fields used in all of those files.
 

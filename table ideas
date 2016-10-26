@@ -3,6 +3,9 @@ hours_of_operations
 - corridor
 
 calendar_dates
+- weekdays
+- saturday
+- sunday
 
 location facility
  - lanes
@@ -41,14 +44,15 @@ facilty_lanes
  - lanes
 
 toll_rates (describe dollar amounts, optional, used for fixed toll rates, based on vehicle axles)
-
-
-
+ - consume toll rate API for real time updates
+ - update time rate, e.g. 5 minutes
+ - toll rate range, e.g. $0.50 - $7.00
+ 
 Toll rate update
-Toll rate definition, HOV 2+, HOV 3+
-Toll rules
-Zones
-Alerts or closures
+- Toll rate definition, HOV 2+, HOV 3+
+- Toll rules
+- Zones
+- Alerts or closures
 
 agency
 - agency_name
@@ -59,9 +63,10 @@ agency
 - agency_toll_url
 
 transponder type
-
-
-
+- single signal
+- switchable
+- distributor
+- manufacturer
 
 vehicle exceptions
  - electric (green (plugin hybrid) or white (cng, all electric))

@@ -1,6 +1,6 @@
 # Managed and Tolled Lanes Feed Specification
 
-This document explains the types of files and data that comprise the Express Lanes Tolling Feed Specification (ELTFS) ("ELFS"? "TFS"?) and defines the fields used in all of those files.
+The table ideas file highlights data tables that comprise the Managed and Tolled Lanes Tolling Feed Specification (MTLFS) and defines the fields used in all of those files.
 
 Example implementation in [VTA Express Lanes API](https://github.com/vta/expresslanes-api).
 

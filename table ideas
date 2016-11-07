@@ -54,7 +54,7 @@ facilty_lane_type (ID - Lane Type)
 - CARPOOLLANE-Carpool lanes
 
 toll_rates (describe dollar amounts, optional, used for fixed toll rates, based on vehicle axles)
- - consume toll rate API for real time updates
+ - consume toll rate API for real time updates - https://github.com/vta/expresslanes-api 
  - update time rate, e.g. 5 minutes
  - toll rate range, e.g. $0.50 - $7.00
  

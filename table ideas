@@ -74,3 +74,20 @@ vehicle exceptions
  - motorcycle
  - transit (busses)
  - emergency vehicles
+
+Vehicle Type - ID - Vehicle Type
+- AV - All Vehicles
+- SOV- SOV : Single Occupancy Vehicles
+- HOV2 - HOV 2+: High Occupancy Vehicles, 2 or more people
+- HOV2OC - HOV 2 for vehicles that have maximum of 2 seats.
+- HOV3 - HOV 3+: High Occupancy Vehicles, 3 or more people
+- HOV4 - HOV 4+: High Occupancy Vehicles, 4 or more people
+- HYBCARS - Hybrid Cars
+- MOTORBIKE - Motor bikes
+- BUS - Bus/Buses
+- VANPOOL - Vanpools
+- LOWEV - Low Emission Vehicles
+- HIGHEV - High Emission Vehicles
+- TRAILER - Trailers
+- AXLE2 - 2-Axle Vehicles
+

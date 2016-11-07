@@ -90,4 +90,9 @@ Vehicle Type - ID - Vehicle Type
 - HIGHEV - High Emission Vehicles
 - TRAILER - Trailers
 - AXLE2 - 2-Axle Vehicles
+- AXLE3 - 3-Axle Vehicles
+- AXLE4 - 4-Axle Vehicles
+- AXLE5 - 5-Axle Vehicles
+- AXLE6 - 6-Axle Vehicles
+- MULTIAXLE - Multi-Axle Vehicles
 

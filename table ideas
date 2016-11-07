@@ -39,9 +39,19 @@ facility_corridor_shapes (polyline)
  - shape_pt_sequence
  - shape_dist_traveled
  
-facilty_lanes
- - shape_id
- - lanes
+facilty_lane_type (ID - Lane Type)
+
+- AL-All Lanes
+- LEFTLANE-Left Lane
+- LEFTLANE2-Two left lanes
+- LEFTLANE3-Three left lanes
+- MIDDLELANE-Middle Lane
+- MIDDLELANE2-Two middle lanes
+- MIDDLELANE3-Three middle lanes
+- RIGHTLANE-Right lane
+- RIGHTLANE2-Two Right Lanes
+- RIGHTLANE3-Three Right Lanes
+- CARPOOLLANE-Carpool lanes
 
 toll_rates (describe dollar amounts, optional, used for fixed toll rates, based on vehicle axles)
  - consume toll rate API for real time updates
@@ -75,7 +85,7 @@ vehicle exceptions
  - transit (busses)
  - emergency vehicles
 
-Vehicle Type - ID - Vehicle Type
+Vehicle Type (ID - Vehicle Type)
 - AV - All Vehicles
 - SOV- SOV : Single Occupancy Vehicles
 - HOV2 - HOV 2+: High Occupancy Vehicles, 2 or more people

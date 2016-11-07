@@ -58,7 +58,13 @@ toll_rates (describe dollar amounts, optional, used for fixed toll rates, based 
  - update time rate, e.g. 5 minutes
  - toll rate range, e.g. $0.50 - $7.00
  
-Toll rate update
+tolling_method (tolling application and collection)
+- CASH - Cash
+- PAYBYPLATE - Pay by (License) Plate
+- FASTRAK - FasTrak
+- TOLLBOOTH - Toll Booth
+ 
+toll_rate_update
 - Toll rate definition, HOV 2+, HOV 3+
 - Toll rules
 - Zones
@@ -72,20 +78,20 @@ agency
 - agency_phone
 - agency_toll_url
 
-transponder type
+transponder_type
 - single signal
 - switchable
 - distributor
 - manufacturer
 
-vehicle exceptions
+vehicle_exceptions
  - electric (green (plugin hybrid) or white (cng, all electric))
  - carpool (2+, 3+)
  - motorcycle
  - transit (busses)
  - emergency vehicles
 
-Vehicle Type (ID - Vehicle Type)
+vehicle_type (ID - Vehicle Type)
 - AV - All Vehicles
 - SOV- SOV : Single Occupancy Vehicles
 - HOV2 - HOV 2+: High Occupancy Vehicles, 2 or more people

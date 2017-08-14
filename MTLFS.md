@@ -138,8 +138,8 @@ Example:
 	  "type": "Point",
 	  "coordinates": [-121.92073, 37.44290]
 	},
- "sign_type": ["Dynamic Toll Rate", "Dynamic Messages"]
- "toll_destination": "North First St"
+ "sign_type": ["Dynamic Toll Rate", "Dynamic Messages"],
+ "toll_destination" : "North First St"
 },
 {
  "facility_id": "FSE",
@@ -148,7 +148,7 @@ Example:
 	  "type": "Point",
 	  "coordinates": [-121.94227, 37.41967]
 	},
- "sign_type": ["Dynamic Toll Rate","Dynamic Messages"]
- "toll_destination": "I-880 NB"
+ "sign_type": ["Dynamic Toll Rate","Dynamic Messages"],
+ "toll_destination" : "I-880 NB"
 }]
 ```

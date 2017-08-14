@@ -51,3 +51,40 @@ Example:
   "toll_authority": "BATA"
 }
 ```
+
+### toll_destination.json
+Describes the system including System operator, URLs, contact info, time zone.  A JSON array of hours defined as follows:
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+facility_id        | Yes         | 
+destination_id        | Yes         | 
+agency_url              | Yes         | 
+CTOC_Entry_Plaza_ID        | Yes         | 
+CTOC_Exit_Plaza_ID          | Yes         | 
+toll_destination        | Yes         | 
+destination_description        | Optional         | 
+destination_type        | Optional         | 
+
+Example:
+```json
+
+[{
+ "facility_id": "CLW",
+ "destination_id": "FSW", 
+ "CTOC_Entry_Plaza_ID": "5110",
+ "CTOC_Exit_Plaza_ID": "5111",
+ "toll_destination": "North First St",
+ "destination_description": "North First St, San Jose, CA",
+ "destination_type": "Freeway"
+},
+{
+ "facility_id": "FSE",
+ "destination_id": "CLE", 
+ "CTOC_Entry_Plaza_ID": "5118",
+ "CTOC_Exit_Plaza_ID": "5119",
+ "toll_destination": "I-880 North bound",
+ "destination_description": "I-880 NB, Milpitas, CA",
+ "destination_type": "Freeway"
+}]
+```

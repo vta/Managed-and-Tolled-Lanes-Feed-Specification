@@ -1,4 +1,4 @@
-{
+[{
  "facility_id": "CLW",
  "destination_id": "FSW", 
  "CTOC_Entry_Plaza_ID": "5110",
@@ -15,4 +15,4 @@
  "toll_destination": "I-880 North bound",
  "destination_description": "I-880 NB, Milpitas, CA",
  "destination_type": "Freeway"
-}
+}]

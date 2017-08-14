@@ -117,3 +117,38 @@ Example:
  "toll_restrictions": "none",
 }
 ```
+
+### toll_signs.json
+Describes the system including System operator, URLs, contact info, time zone.  A JSON array of hours defined as follows:
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+facility_id        | Yes         | 
+sign_id        | Yes         | 
+geometry              | Yes         | 
+sign_type        | Yes         | 
+toll_destination          | Yes         | 
+
+Example:
+```json
+[{
+ "facility_id": "CLW",
+ "sign_id": "750",	 
+ "geometry": {
+	  "type": "Point",
+	  "coordinates": [-121.92073, 37.44290]
+	},
+ "sign_type": ["Dynamic Toll Rate", "Dynamic Messages"]
+ "toll_destination": "North First St"
+},
+{
+ "facility_id": "FSE",
+ "sign_id": "250",	 
+ "geometry": {
+	  "type": "Point",
+	  "coordinates": [-121.94227, 37.41967]
+	},
+ "sign_type": ["Dynamic Toll Rate","Dynamic Messages"]
+ "toll_destination": "I-880 NB"
+}]
+```

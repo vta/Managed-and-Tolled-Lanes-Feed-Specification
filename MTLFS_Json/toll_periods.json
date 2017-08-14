@@ -1,5 +1,5 @@
 {
- "id": "CLW",
+ "facility_id": "CLW",
  "name": "Calaveras Westbound",
  "start_time_am": "05:00",
  "end_time_am": "10:00",
@@ -11,7 +11,7 @@
  "end_date": "20500101"
 },
 {
- "id": "FSE",
+ "facility_id": "FSE",
  "name": "First Street Eastbound",
  "start_time_am": "05:00",
  "end_time_am": "09:00",

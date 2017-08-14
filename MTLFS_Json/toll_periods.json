@@ -1,7 +1,7 @@
 {
  "facility_id": "CLW",
  "name": "Calaveras Westbound",
- "hours_of_operation": [[05:00, 10:00], [15:00, 19:00]],
+ "hours_of_operation": [[0500, 1000], [1500, 1900]],
   "direction": "westbound",
  "days_of_week": "MTWRF",
  "start_date": "20120325",
@@ -10,7 +10,7 @@
 {
  "facility_id": "FSE",
  "name": "First Street Eastbound",
- "hours_of_operation": [[05:00, 09:00], [15:00, 19:00]],
+ "hours_of_operation": [[0500, 0900], [1500, 1900]],
  "direction": "northbound",
  "days_of_week": "MTWRF",
  "start_date": "20120325",

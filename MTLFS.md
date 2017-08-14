@@ -53,7 +53,7 @@ Example:
 ```
 
 ### toll_destination.json
-Describes the system including System operator, URLs, contact info, time zone.  A JSON array of hours defined as follows:
+Describes entrances and exits to the facility
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
@@ -87,4 +87,33 @@ Example:
  "destination_description": "I-880 NB, Milpitas, CA",
  "destination_type": "Freeway"
 }]
+```
+
+### general_toll_info.json
+Describes the system including System operator, URLs, contact info, time zone.  A JSON array of hours defined as follows:
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+tolled_vehicles        | Yes         | 
+tolling_methods        | Yes         | 
+payment_options              | Yes         | 
+toll_periods        | Yes         | 
+minimum_toll          | Yes         | 
+maximum_toll        | Yes         | 
+toll_currency        | Optional         | 
+toll_restrictions        | Optional         | 
+
+Example:
+```json
+{
+ "tolled_vehicles": "SOV",
+ "tolling_methods": "transponder",
+ "payment_options": "FasTrak",
+ "toll_periods": "dynamic",
+ "minimum_toll": "0.50",
+ "maximum_toll": "7.00",
+ "toll_currency": "USD",
+ "toll_exemptions": [ "HOV2", "Motorbike", "transit", "greensticker", "whitesticker" ],
+ "toll_restrictions": "none",
+}
 ```

@@ -3,4 +3,10 @@
  "facility_type": "Express Lanes",
  "facility_lane": "Left Lane",
  "facility_access": "Lane Entry and Exit"
+},
+{
+ "facility_id": "FSE",
+ "facility_type": "Express Lanes",
+ "facility_lane": "Left Lane",
+ "facility_access": "Lane Entry and Exit"
 }

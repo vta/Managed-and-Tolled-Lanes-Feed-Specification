@@ -1,9 +1,9 @@
 {
- "facility_id": "CLW"
- "destination_id": "FSW"
- "CTOC_Entry_Plaza_ID": "5110"
- "CTOC_Exit_Plaza_ID": "5111" 
- "toll_destination": "North First St"
- "destination_description": "North First St, San Jose, CA"
+ "facility_id": "CLW",
+ "destination_id": "FSW", 
+ "CTOC_Entry_Plaza_ID": "5110",
+ "CTOC_Exit_Plaza_ID": "5111",
+ "toll_destination": "North First St",
+ "destination_description": "North First St, San Jose, CA",
  "destination_type": "Freeway"
 }

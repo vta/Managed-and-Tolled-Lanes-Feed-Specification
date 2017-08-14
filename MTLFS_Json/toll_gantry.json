@@ -2,7 +2,7 @@
  "type": "Feature",
  "geometry": {
 	  "type": "Point",
-	  "coordinates": [-121.91927, 37.43557]
+	  "coordinates": [-121.92073, 37.44290]
 	},
 	"properties": {
 	"Toll_Gantry": "SVEL1" 

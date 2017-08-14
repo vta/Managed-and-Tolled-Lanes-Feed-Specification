@@ -1,26 +1,24 @@
-[
-  {
-    "id": "CLW",
-    "name": "Calaveras Westbound",
-    "start_time_am": "05:00",
-    "end_time_am": "10:00",
-    "start_time_pm": "15:00",
-    "end_time_pm": "19:00",
-    "direction": "westbound",
-    "days_of_week": "MTWRF",
-    "start_date": "20120325",
-    "end_date": "20500101"
-  },
-  {
-    "id": "FSE",
-    "name": "First Street Eastbound",
-    "start_time_am": "05:00",
-    "end_time_am": "09:00",
-    "start_time_pm": "15:00",
-    "end_time_pm": "19:00",
-    "direction": "northbound",
-    "days_of_week": "MTWRF",
-    "start_date": "20120325",
-    "end_date": "20500101"
-  }
-]
+{
+ "id": "CLW",
+ "name": "Calaveras Westbound",
+ "start_time_am": "05:00",
+ "end_time_am": "10:00",
+ "start_time_pm": "15:00",
+ "end_time_pm": "19:00",
+ "direction": "westbound",
+ "days_of_week": "MTWRF",
+ "start_date": "20120325",
+ "end_date": "20500101"
+},
+{
+ "id": "FSE",
+ "name": "First Street Eastbound",
+ "start_time_am": "05:00",
+ "end_time_am": "09:00",
+ "start_time_pm": "15:00",
+ "end_time_pm": "19:00",
+ "direction": "northbound",
+ "days_of_week": "MTWRF",
+ "start_date": "20120325",
+ "end_date": "20500101"
+}

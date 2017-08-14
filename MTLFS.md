@@ -152,3 +152,41 @@ Example:
  "toll_destination" : "I-880 NB"
 }]
 ```
+
+
+### toll_periods.json
+Describes the name and operational dates and times of the facilities
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+facility_id        | Yes         | 
+name        | Yes         | 
+hours_of_operation              | Yes         | 
+direction        | Yes         | 
+days_of_week          | Yes         | 
+start_date        | Yes         | 
+end_date          | Yes         | 
+
+
+Example:
+```json
+[{
+ "facility_id": "CLW",
+ "name": "Calaveras Westbound",
+ "hours_of_operation": [[0500, 1000], [1500, 1900]],
+ "direction": "westbound",
+ "days_of_week": "MTWRF",
+ "start_date": "20120325",
+ "end_date": "20500101"
+},
+{
+ "facility_id": "FSE",
+ "name": "First Street Eastbound",
+ "hours_of_operation": [[0500, 0900], [1500, 1900]],
+ "direction": "northbound",
+ "days_of_week": "MTWRF",
+ "start_date": "20120325",
+ "end_date": "20500101"
+}]
+```
+

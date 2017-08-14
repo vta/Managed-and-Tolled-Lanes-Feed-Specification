@@ -2,5 +2,10 @@
  "facility_id": "CLW",
  "lane_type": "HOV 2+",
  "lane_location": "left lane"
+},
+{
+ "facility_id": "FSE",
+ "lane_type": "HOV 2+",
+ "lane_location": "left lane"
 }
 

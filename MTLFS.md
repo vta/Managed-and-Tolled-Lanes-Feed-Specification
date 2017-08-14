@@ -15,7 +15,7 @@ general_toll_info.json      | Yes           | Describes toll payment methods, mi
 toll_destination.json       | Yes           | Describes entrances and exits to the facility
 toll_facility.json          | Optional      | Describes the lane types of the facility
 toll_periods.json           | Optional      | Describes the name and operational dates and times of the facilities
-toll_signs.json             | Optional      | Describes the regions the system is broken up into
+toll_signs.json             | Optional      | Describes where the physical toll signs are located
 toll_authority_info.json    | Yes           | Describes the system including System operator, URLs, contact info, time zone
 
 ### toll_authority_info.json
@@ -119,7 +119,7 @@ Example:
 ```
 
 ### toll_signs.json
-Describes the system including System operator, URLs, contact info, time zone.  A JSON array of hours defined as follows:
+Describes where the physical toll signs are located
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
@@ -189,4 +189,35 @@ Example:
  "end_date": "20500101"
 }]
 ```
+
+
+### toll_facility.json
+Describes the lane types of the facility
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+facility_id        | Yes         | 
+facility_type        | Yes         | 
+lane_type              | Yes         | 
+facility_lane        | Yes         | 
+facility_access          | Yes         | 
+
+Example:
+```json
+[{
+ "facility_id": "CLW",
+ "facility_type": "Express Lanes",
+ "lane_type": "HOV2+",
+ "facility_lane": "Left Lane",
+ "facility_access": "Lane Entry and Exit"
+},
+{
+ "facility_id": "FSE",
+ "facility_type": "Express Lanes",
+ "lane_type": "HOV2+",
+ "facility_lane": "Left Lane",
+ "facility_access": "Lane Entry and Exit"
+}]
+```
+
 

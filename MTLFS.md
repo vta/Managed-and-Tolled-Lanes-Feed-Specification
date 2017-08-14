@@ -17,3 +17,37 @@ toll_facility.json          | Optional      | Describes the lane types of the fa
 toll_periods.json           | Optional      | Describes the name and operational dates and times of the facilities
 toll_signs.json             | Optional      | Describes the regions the system is broken up into
 toll_authority_info.json    | Yes           | Describes the system including System operator, URLs, contact info, time zone
+
+### toll_authority_info.json
+Describes the system including System operator, URLs, contact info, time zone.  A JSON array of hours defined as follows:
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+agency_id        | Yes         | 
+agency_name        | Yes         | 
+agency_url              | Yes         | 
+agency_timezone        | Yes         | 
+agency_lang          | Yes         | 
+agency_phone        | Yes         | 
+toll_program        | Optional         | 
+toll_program_shortname        | Optional         | 
+toll_program_url        | Optional         | 
+toll_operator        | Optional         | 
+toll_authority        | Optional         | 
+
+Example:
+```json
+{
+  "agency_id": "VTA",
+  "agency_name": "Santa Clara Valley Transportation Authority",
+  "agency_url": "http://www.vta.org",
+  "agency_timezone": "America/Los_Angeles",
+  "agency_lang": "EN",
+  "agency_phone": "408-321-2300",
+  "toll_program": "Silicon Valley Express Lanes",
+  "toll_program_shortname": "SVEL",
+  "toll_program_url": "http://www.vta.org/getting-around/using-express-lanes",
+  "toll_operator": "VTA",
+  "toll_authority": "BATA"
+}
+```

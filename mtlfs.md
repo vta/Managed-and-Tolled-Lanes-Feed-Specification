@@ -216,6 +216,42 @@ Example:
 ```
 
 
+### toll_status.json
+Real time prices displayed on toll signs
+
+Field Name            | Required  | Defines
+--------------------- | ----------| ----------
+facilities              | Yes       | Array that contains one object per facility in the system as defined below
+\- facility_id          | Yes       | Unique identifier of a facility/plaza (see toll_facility.json)
+\- interval_starting | Yes       | At which time the given price starts being live
+\- pricing_module  | Yes  | Price displayed to users.  Possible values can be: a price or FREE TO ALL or HOV ONLY
+\- message_module | Yes       | 
+\- algorithm_mode  | Optional  | 
+```json
+{
+  "last_updated": 1502829544,
+  "ttl": 10,
+  "data": {
+    "facilities": [
+      {
+        "facility_id": "CLW",
+        "interval_starting": 1463610000000,
+        "pricing_module": "0.50",
+        "message_module": "HOV 2+ NO TOLL",
+        "algorithm_mode": "EL Speed"
+      },
+      {
+        "facility_id": "FSE",
+        "interval_starting": 1463610000000,
+        "pricing_module": "2.50",
+        "message_module": "HOV 2+ NO TOLL",
+        "algorithm_mode": "EL Speed"
+      }
+    ]
+  }
+}
+```
+
 ### toll_facility.json
 Describes the lane types of the facility
 

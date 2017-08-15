@@ -1,12 +1,15 @@
 {
        "type": "FeatureCollection",
-       "facility_id": "FSE",
-       "properties": "Length of the double white line striping",
-       "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-       "geometry": {
+       "features": [
+       {
+        "type": "Feature",
+        "facility_id": "FSE",
+        "properties": "Length of the double white line striping",
+        "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+        "geometry": {
            "type": "LineString",
            "coordinates": [
-               [-121.938238664, 37.4206166485],
+                [-121.938238664, 37.4206166485],
                 [-121.936260009, 37.4210729325],
                 [-121.934436635, 37.4214900877],
                 [-121.933813407, 37.4216350451],
@@ -98,6 +101,9 @@
                 [-121.919410995, 37.4367929498],
                 [-121.919471308, 37.4371341359]
            ]
+             
+             },
+
               "type": "Feature",
               "facility_id": "CLW",
               "properties": "Length of the double white line striping",
@@ -205,6 +211,6 @@
                 [-121.944854757, 37.4194108944],
                 [-121.945656565, 37.4194124625],
                 [-121.945809048, 37.4194134448]
-           ]
-       }
+           ] }
+       }]
    }

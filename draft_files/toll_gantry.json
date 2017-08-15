@@ -1,0 +1,18 @@
+[{
+ "facility_id": "CLW",
+ "toll_gantry": "SB",	 
+ "geometry": {
+	  "type": "Point",
+	  "coordinates": [-121.91934, 37.43557]
+	},
+ "toll_destination" : "North First St"
+},
+{
+ "facility_id": "FSE",
+ "toll_gantry": "NB",	 
+ "geometry": {
+	  "type": "Point",
+	  "coordinates": [-121.91922, 37.43563]
+	},
+  "toll_destination" : "I-880 NB"
+}]

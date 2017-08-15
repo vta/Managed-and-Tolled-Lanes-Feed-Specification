@@ -16,13 +16,69 @@ This specification defines the following files along with their associated conte
 
 File Name                   | Required      | Defines
 --------------------------- | ------------  | ----------
-MTLFS.json                  | Optional      | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
-general_toll_info.json      | Yes           | Describes toll payment methods, min and max tolls, and restrictions
-toll_destination.json       | Yes           | Describes entrances and exits to the facility
-toll_facility.json          | Optional      | Describes the lane types of the facility
-toll_periods.json           | Optional      | Describes the name and operational dates and times of the facilities
-toll_signs.json             | Optional      | Describes where the physical toll signs are located
+mtlfs.json                  | Optional      | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
 toll_authority_info.json    | Yes           | Describes the system including System operator, URLs, contact info, time zone
+general_toll_info.json      | Yes           | Describes toll payment methods, min and max tolls, and restrictions
+toll_signs.json             | Optional      | Describes where the physical toll signs are located
+toll_periods.json           | Optional      | Describes the name and operational dates and times of the facilities
+toll_facility.json          | Optional      | Describes the lane types of the facility
+toll_destination.json       | Yes           | Describes entrances and exits to the facility
+
+
+### mtlfs.json
+The following fields are all attributes within the main "data" object for this feed.
+
+Field Name              | Required    | Defines
+------------------------| ------------| ----------
+_language_              | Yes         | The language that all of the contained files will be published in. This language must match the value in the system_information file
+  \- feeds               | Yes         | An array of all of the feeds that are published by this auto-discovery file
+  \- name                | Yes         | Key identifying the type of feed this is (e.g. "system_information", "station_information")
+  \- url                 | Yes         | Full URL for the feed
+
+Example:
+```json
+// 20170815130358
+// https://mtlfs.vta.org/mtlfs/mtlfs.json
+
+{
+  "last_updated": 1502827438,
+  "ttl": 60,
+  "data": {
+    "en": {
+      "feeds": [
+        {
+          "name": "mtlfs",
+          "url": "https://mtlfs.vta.org/mtlfs/mtlfs.json"
+        },
+        {
+          "name": "toll_authority_info",
+          "url": "https://mtlfs.vta.org/mtlfs/toll_authority_info.json"
+        },
+	{
+          "name": "general_toll_info",
+          "url": "https://mtlfs.vta.org/mtlfs/general_toll_info.json"
+        },
+	{
+          "name": "toll_signs",
+          "url": "https://mtlfs.vta.org/mtlfs/toll_signs.json"
+        },
+        {
+          "name": "toll_periods",
+          "url": "https://mtlfs.vta.org/mtlfs/toll_periods.json"
+        },
+        {
+          "name": "toll_facility",
+          "url": "https://mtlfs.vta.org/mtlfs/toll_facility.json"
+        },
+        {
+          "name": "toll_destination",
+          "url": "https://mtlfs.vta.org/mtlfs/toll_destination.json"
+        }
+	]
+    }
+  }
+}
+```
 
 ### toll_authority_info.json
 Describes the system including System operator, URLs, contact info, time zone.  A JSON array of hours defined as follows:

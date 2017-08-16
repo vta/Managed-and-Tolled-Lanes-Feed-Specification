@@ -1,18 +1,29 @@
-[{
- "facility_id": "CLW",
- "toll_gantry": "SB",	 
- "geometry": {
-	  "type": "Point",
-	  "coordinates": [-121.91934, 37.43557]
-	},
- "toll_destination" : "North First St"
-},
 {
- "facility_id": "FSE",
- "toll_gantry": "NB",	 
- "geometry": {
-	  "type": "Point",
-	  "coordinates": [-121.91922, 37.43563]
-	},
-  "toll_destination" : "I-880 NB"
-}]
+	"type": "FeatureCollection",
+       "features": [
+       {
+
+       "type": "Feature",
+	   "facility_id": "CLW",
+ 	   "toll_gantry": "SB",	
+ 	   "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }, 
+ 	   "geometry": {
+	  		"type": "Point",
+	  		"coordinates": [-121.91934, 37.43557]
+					},
+ 		"toll_destination" : "North First St"
+		},
+		
+		{
+ 		"type": "Feature",
+ 		"facility_id": "FSE",
+ 		"toll_gantry": "NB",	 
+ 		"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }, 
+ 		"geometry": {
+	  		"type": "Point",
+	  		"coordinates": [-121.91922, 37.43563]
+					},
+  		"toll_destination" : "I-880 NB"
+		}
+					]
+}

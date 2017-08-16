@@ -8,11 +8,13 @@ This document explains the types of files and data that comprise the Managed and
     * [mtlfs.json](#mtlfsjson)
     * [toll_authority_info.json](#toll_authority_infojson)
     * [general_toll_info.json](#general_toll_infojson)
-    * [toll_signs.json](#toll_signsjson)
     * [toll_periods.json](#toll_periodsjson)
     * [toll_status.json](#toll_statusjson)
     * [toll_facility.json](#toll_facilityjson)
     * [toll_destination.json](#toll_destinationjson)
+    * [toll_signs_geom.json](#toll_signs_geomjson)
+    * [facility_geom.json](#facility_geomjson)
+    * [gantry_geom.json](#gantry_geomjson)
 
 ## Files
 This specification defines the following files along with their associated content:
@@ -22,11 +24,13 @@ File Name                   | Required      | Defines
 mtlfs.json                  | Optional      | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
 toll_authority_info.json    | Yes           | Describes the system including System operator, URLs, contact info, time zone
 general_toll_info.json      | Yes           | Describes toll payment methods, min and max tolls, and restrictions
-toll_signs.json             | Optional      | Describes where the physical toll signs are located
 toll_periods.json           | Optional      | Describes the name and operational dates and times of the facilities
 toll_status.json           | Optional      | Provides realtime info of the prices and messaging of the toll signs
 toll_facility.json          | Optional      | Describes the lane types of the facility
 toll_destination.json       | Yes           | Describes entrances and exits to the facility
+toll_signs_geom.json     | Optional      | Describes where the physical toll signs are located
+facility_geom.json     | Optional      | Describes the different facilities's coverage area 
+gantry_geom.json       | Required      | Describes where the physical toll signs are located
 
 ### Output Format
 Every JSON file presented in this specification except the three geojson files contains the same common header information at the top level of the JSON response object:
@@ -42,7 +46,7 @@ Example:
 {
   "last_updated": 20170815130358,
   "ttl": 3600,
-  "data": {...}
+  "data": {}
 }
 ```
 
@@ -172,52 +176,6 @@ Example:
  }
 }
 ```
-
-### toll_signs.json
-Describes where the physical toll signs are located
-
-Field Name          | Required    | Defines
---------------------| ------------| ----------
-facility_id        | Yes         | 
-sign_id        | Yes         | 
-geometry              | Yes         | 
-sign_type        | Yes         | 
-toll_destination          | Yes         | 
-
-Example:
-```json
-{
-	"type": "FeatureCollection",
-       "features": [
-
-       {
- 		"type": "Feature",
- 		"facility_id": "CLW",
- 		"sign_id": "750",	 
- 		"geometry": {
-	  		"type": "Point",
-	  		"coordinates": [-121.92073, 37.44290]
-					},
- 		"sign_type": ["Dynamic Toll Rate", "Dynamic Messages"],
- 		"toll_destination" : "North First St"
-		},
-
-
-		{
-		"type": "Feature",
- 		"facility_id": "FSE",
- 		"sign_id": "250",	 
- 		"geometry": {
-	  		"type": "Point",
-	  		"coordinates": [-121.94227, 37.41967]
-					},
- 		"sign_type": ["Dynamic Toll Rate","Dynamic Messages"],
- 		"toll_destination" : "I-880 NB"
-		}
-					]
-}
-```
-
 
 ### toll_periods.json
 Describes the name and operational dates and times of the facilities
@@ -383,3 +341,43 @@ Example:
  }
 }
 ```
+
+### toll_signs_geom.json
+A geojson file that gives points within a a FeatureCollection that describes where the physical toll signs are located
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+facility_id        | Yes         | 
+sign_id        | Yes         | 
+geometry              | Yes         | 
+sign_type        | Yes         | 
+crs              | Yes         | 
+
+Example:
+
+### facility_geom.json
+A geojson file that is the centerline of the facility that would interact with vehicles.
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+facility_id        | Yes         | 
+properties        | Yes         | 
+geometry              | Yes         | 
+crs              | Yes         | 
+
+Example:
+[gantry_geom.json](draft_files/facility_geom.json)
+
+### gantry_geom.json
+A geojson file that gives points within a a FeatureCollection that describes where the toll collection gantries are located
+
+Field Name          | Required    | Defines
+--------------------| ------------| ----------
+facility_id        | Yes         | 
+toll_gantry        | Yes         | 
+geometry              | Yes         | 
+crs              | Yes         | 
+
+
+Example:
+[gantry_geom.json](draft_files/gantry_geom.json)

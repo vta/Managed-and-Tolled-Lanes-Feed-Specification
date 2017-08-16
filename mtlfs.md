@@ -205,35 +205,43 @@ Describes the name and operational dates and times of the facilities
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-facility_id        | Yes         | 
-name        | Yes         | 
-hours_of_operation              | Yes         | 
-direction        | Yes         | 
-days_of_week          | Yes         | 
-start_date        | Yes         | 
-end_date          | Yes         | 
+facilities	|		| Array that contains one object per facility in the system as defined below
+\- facility_id        | Yes         | 
+\- name        | Yes         | 
+\- hours_of_operation              | Yes         | 
+\- direction        | Yes         | 
+\- days_of_week          | Yes         | 
+\- start_date        | Yes         | 
+\- end_date          | Yes         | 
 
 
 Example:
 ```json
-[{
- "facility_id": "CLW",
- "name": "Calaveras Westbound",
- "hours_of_operation": [[0500, 1000], [1500, 1900]],
- "direction": "westbound",
- "days_of_week": "MTWRF",
- "start_date": "20120325",
- "end_date": "20500101"
-},
 {
- "facility_id": "FSE",
- "name": "First Street Eastbound",
- "hours_of_operation": [[0500, 0900], [1500, 1900]],
- "direction": "northbound",
- "days_of_week": "MTWRF",
- "start_date": "20120325",
- "end_date": "20500101"
-}]
+ "last_updated": 1502829544,
+ "ttl": 10,
+ "data": {
+  "facilities:": [
+   {
+    "facility_id": "CLW",
+    "name": "Calaveras Westbound",
+    "hours_of_operation": [[0500, 1000], [1500, 1900]],
+    "direction": "westbound",
+    "days_of_week": "MTWRF",
+    "start_date": "20120325",
+    "end_date": "20500101"
+   },
+   {
+    "facility_id": "FSE",
+    "name": "First Street Eastbound",
+    "hours_of_operation": [[0500, 0900], [1500, 1900]],
+    "direction": "northbound",
+    "days_of_week": "MTWRF",
+    "start_date": "20120325",
+    "end_date": "20500101"
+   }]
+ }
+}
 ```
 
 
@@ -278,43 +286,54 @@ Describes the lane types of the facility
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-facility_id        | Yes         | 
-facility_type        | Yes         | 
-lane_type              | Yes         | 
-facility_lane        | Yes         | 
-facility_access          | Yes         | 
+facilities        | Yes         | 
+\- facility_id        | Yes         | 
+\- facility_type        | Yes         | 
+\- lane_type              | Yes         | 
+\- facility_lane        | Yes         | 
+\- facility_access          | Yes         | 
 
 Example:
 ```json
-[{
- "facility_id": "CLW",
- "facility_type": "Express Lanes",
- "lane_type": "HOV2+",
- "facility_lane": "Left Lane",
- "facility_access": "Lane Entry and Exit"
-},
 {
- "facility_id": "FSE",
- "facility_type": "Express Lanes",
- "lane_type": "HOV2+",
- "facility_lane": "Left Lane",
- "facility_access": "Lane Entry and Exit"
-}]
+ "last_updated": 1502906828,
+ "ttl": 60,
+ "data": {
+  "facilities":[
+   {
+    "facility_id": "CLW",
+    "facility_type": "Express Lanes",
+    "lane_type": "HOV2+",
+    "facility_lane": "Left Lane",
+    "facility_access": "Lane Entry and Exit"
+   },
+   {
+    "facility_id": "FSE",
+    "facility_type": "Express Lanes",
+    "lane_type": "HOV2+",
+    "facility_lane": "Left Lane",
+    "facility_access": "Lane Entry and Exit"
+   }
+  ]
+ }
+}
 ```
+
 
 ### toll_destination.json
 Describes entrances and exits to the facility
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-facility_id        | Yes         | 
-destination_id        | Yes         | 
-agency_url              | Yes         | 
-CTOC_Entry_Plaza_ID        | Yes         | 
-CTOC_Exit_Plaza_ID          | Yes         | 
-toll_destination        | Yes         | 
-destination_description        | Optional         | 
-destination_type        | Optional         | 
+facilities        | Yes         | 
+\- facility_id        | Yes         | 
+\- destination_id        | Yes         | 
+\- agency_url              | Yes         | 
+\- CTOC_Entry_Plaza_ID        | Yes         | 
+\- CTOC_Exit_Plaza_ID          | Yes         | 
+\- toll_destination        | Yes         | 
+\- destination_description        | Optional         | 
+\- destination_type        | Optional         | 
 
 Example:
 ```json
@@ -345,4 +364,3 @@ Example:
  }
 }
 ```
-

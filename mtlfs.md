@@ -23,6 +23,7 @@ toll_authority_info.json    | Yes           | Describes the system including Sys
 general_toll_info.json      | Yes           | Describes toll payment methods, min and max tolls, and restrictions
 toll_signs.json             | Optional      | Describes where the physical toll signs are located
 toll_periods.json           | Optional      | Describes the name and operational dates and times of the facilities
+toll_status.json           | Optional      | Provides realtime info of the prices and messaging of the toll signs
 toll_facility.json          | Optional      | Describes the lane types of the facility
 toll_destination.json       | Yes           | Describes entrances and exits to the facility
 

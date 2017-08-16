@@ -3,6 +3,7 @@ This document explains the types of files and data that comprise the Managed and
 
 ## Table of Contents
 * [Files](#files)
+* [Output Format](#output-format)
 * Field Definitions
     * [mtlfs.json](#mtlfsjson)
     * [toll_authority_info.json](#toll_authority_infojson)
@@ -27,6 +28,23 @@ toll_status.json           | Optional      | Provides realtime info of the price
 toll_facility.json          | Optional      | Describes the lane types of the facility
 toll_destination.json       | Yes           | Describes entrances and exits to the facility
 
+### Output Format
+Every JSON file presented in this specification except the three geojson files contains the same common header information at the top level of the JSON response object:
+
+Field Name          | Required  | Defines
+--------------------| ----------| ----------
+last_updated        | Yes       | Integer POSIX timestamp indicating the last time the data in this feed was updated
+ttl                 | Yes       | Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)
+data                | Yes       | JSON hash containing the data fields for this response
+
+Example:
+```json
+{
+  "last_updated": 20170815130358,
+  "ttl": 3600,
+  "data": {...}
+}
+```
 
 ### mtlfs.json
 The following fields are all attributes within the main "data" object for this feed.

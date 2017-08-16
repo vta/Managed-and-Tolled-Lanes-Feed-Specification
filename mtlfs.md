@@ -121,6 +121,9 @@ toll_authority        | Optional         |
 Example:
 ```json
 {
+ "last_updated": 1502906828,
+ "ttl": 60,
+ "data": {
   "agency_id": "VTA",
   "agency_name": "Santa Clara Valley Transportation Authority",
   "agency_url": "http://www.vta.org",
@@ -132,6 +135,7 @@ Example:
   "toll_program_url": "http://www.vta.org/getting-around/using-express-lanes",
   "toll_operator": "VTA",
   "toll_authority": "BATA"
+ }
 }
 ```
 
@@ -152,15 +156,20 @@ toll_restrictions        | Optional         |
 Example:
 ```json
 {
- "tolled_vehicles": "SOV",
- "tolling_methods": "transponder",
- "payment_options": "FasTrak",
- "toll_periods": "dynamic",
- "minimum_toll": "0.50",
- "maximum_toll": "7.00",
- "toll_currency": "USD",
- "toll_exemptions": [ "HOV2", "Motorbike", "transit", "greensticker", "whitesticker" ],
- "toll_restrictions": "none",
+ "last_updated": 1502906828,
+ "ttl": 60,
+ "data":
+ {
+  "tolled_vehicles": "SOV",
+  "tolling_methods": "transponder",
+  "payment_options": "FasTrak",
+  "toll_periods": "dynamic",
+  "minimum_toll": "0.50",
+  "maximum_toll": "7.00",
+  "toll_currency": "USD",
+  "toll_exemptions": [ "HOV2", "Motorbike", "transit", "greensticker", "whitesticker" ],
+  "toll_restrictions": "none",
+ }
 }
 ```
 

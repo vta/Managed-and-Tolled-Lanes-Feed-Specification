@@ -4,10 +4,12 @@ This document explains the types of files and data that comprise the Managed and
 ## Table of Contents
 * [Files](#files)
 * Field Definitions
+    * [mtlfs.json](#mtlfsjson)
     * [toll_authority_info.json](#toll_authority_infojson)
     * [general_toll_info.json](#general_toll_infojson)
     * [toll_signs.json](#toll_signsjson)
     * [toll_periods.json](#toll_periodsjson)
+    * [toll_status.json](#toll_statusjson)
     * [toll_facility.json](#toll_facilityjson)
     * [toll_destination.json](#toll_destinationjson)
 

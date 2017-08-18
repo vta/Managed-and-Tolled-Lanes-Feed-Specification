@@ -352,8 +352,11 @@ sign_id        | Yes         |
 geometry              | Yes         | 
 sign_type        | Yes         | 
 crs              | Yes         | 
+toll_destination  | Yes         | 
+
 
 Example:
+[toll_signs_geom.json](draft_files/toll_signs_geom.json)
 
 ### facility_geom.json
 A geojson file that is the centerline of the facility that would interact with vehicles.

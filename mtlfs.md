@@ -369,7 +369,7 @@ geometry              | Yes         |
 crs              | Yes         | 
 
 Example:
-[gantry_geom.json](draft_files/facility_geom.json)
+[facility_geom.json](draft_files/facility_geom.json)
 
 ### gantry_geom.json
 A geojson file that gives points within a a FeatureCollection that describes where the toll collection gantries are located

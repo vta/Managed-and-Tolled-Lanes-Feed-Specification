@@ -139,7 +139,7 @@ Example:
   "toll_program_shortname": "SVEL",
   "toll_program_url": "http://www.vta.org/getting-around/using-express-lanes",
   "toll_operator": "VTA",
-  "toll_authority": "VTA"
+  "toll_authority": "VTA",
   "toll_backend": "BATA"
  }
 }

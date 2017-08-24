@@ -110,17 +110,18 @@ Describes the system including System operator, URLs, contact info, time zone.  
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-agency_id        | Yes         | 
-agency_name        | Yes         | 
-agency_url              | Yes         | 
-agency_timezone        | Yes         | 
-agency_lang          | Yes         | 
-agency_phone        | Yes         | 
-toll_program        | Optional         | 
-toll_program_shortname        | Optional         | 
-toll_program_url        | Optional         | 
+agency_id        | Yes         | Uniquely identifies a tolling agency. A tolling feed may represent data from more than one agency. The agency_id is dataset unique. This field is optional for tolling feeds that only contain data for a single agency.
+agency_name        | Yes         | Full name of the agency operating the tolled or managed lanes. 
+agency_url              | Yes         | Contains the URL of the agency. The value must be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
+agency_timezone        | Yes         | Contains the timezone where the agency is located. Timezone names never contain the space character but may contain an underscore. Please refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values. If multiple agencies are specified in the feed, each must have the same agency_timezone.
+agency_lang          | Yes         | Contains a two-letter ISO 639-1 code for the primary language used by this agency. The language code is case-insensitive (both en and EN are accepted). This setting defines capitalization rules and other language-specific settings for all text contained in this transit agency's feed. Please refer to http://www.loc.gov/standards/iso639-2/php/code_list.php for a list of valid values.
+agency_phone        | Yes         | Contains a single voice telephone number for the specified agency.
+toll_program        | Optional         | Name of the tolling or managed lanes program at the agency.
+toll_program_shortname        | Optional         | Abbreviated name of the tolling or managed lanes program.  
+toll_program_url        | Optional         | Specifies the URL of a web page that allows a commuter to learn more about the tolling facliity. 
 toll_operator        | Optional         | 
 toll_authority        | Optional         | 
+toll_backend		| Optional	|
 
 Example:
 ```json
@@ -138,7 +139,8 @@ Example:
   "toll_program_shortname": "SVEL",
   "toll_program_url": "http://www.vta.org/getting-around/using-express-lanes",
   "toll_operator": "VTA",
-  "toll_authority": "BATA"
+  "toll_authority": "VTA"
+  "toll_backend": "BATA"
  }
 }
 ```

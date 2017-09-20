@@ -119,9 +119,9 @@ agency_phone        | Yes         | Contains a single voice telephone number for
 toll_program        | Optional         | Name of the tolling or managed lanes program at the agency.
 toll_program_shortname        | Optional         | Abbreviated name of the tolling or managed lanes program.  
 toll_program_url        | Optional         | Specifies the URL of a web page that allows a commuter to learn more about the tolling facliity. 
-toll_operator        | Optional         | 
-toll_authority        | Optional         | 
-toll_backend		| Optional	|
+toll_operator        | Optional         | Specifies the agency operating the olled facility.
+toll_authority        | Optional         | Specifies the agency whom is hte authority for the toll facility.
+toll_backend		| Optional	| Specifies the agency responsible for backend toll processing.
 
 Example:
 ```json
@@ -150,14 +150,15 @@ Describes the system including System operator, URLs, contact info, time zone.  
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-tolled_vehicles        | Yes         | 
-tolling_methods        | Yes         | 
-payment_options              | Yes         | 
-toll_periods        | Yes         | 
-minimum_toll          | Yes         | 
-maximum_toll        | Yes         | 
-toll_currency        | Optional         | 
-toll_restrictions        | Optional         | 
+tolled_vehicles        | Yes         | Types of vehicles tolled, e.g. SOV - Single Occupant Vehicle, HOV 2 - Two occupant vehicle.
+tolling_methods        | Yes         | How the tolls are collected, e.g. Transponder, Toll Booth, License Plate.
+payment_options              | Yes         | Name of the backend tolling payment system, e.g. Fastrak, EZPass. 
+toll_periods        | Yes         | How the toll periods are being calculated from the system algorithm.
+minimum_toll          | Yes         | The minimum toll rate applied during the hours of operation.
+maximum_toll        | Yes         | The maximun toll rate applied during the hours of operation.
+toll_currency        | Optional         | Currency this is in (ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217)
+toll_exemptions		| Optional 	| Vehicles exempt from paying tolls, e.g. HOV 2+, HOV 3+, Motorbike, Bus, Electric Vehicle.
+toll_restrictions        | Optional         | Vehicles restricted from the facility, e.g. Trucks, Compressed Liquids or Air.
 
 Example:
 ```json
@@ -171,7 +172,7 @@ Example:
   "payment_options": "FasTrak",
   "toll_periods": "dynamic",
   "minimum_toll": "0.50",
-  "maximum_toll": "7.00",
+  "maximum_toll": "8.00",
   "toll_currency": "USD",
   "toll_exemptions": [ "HOV2", "Motorbike", "transit", "greensticker", "whitesticker" ],
   "toll_restrictions": "none",
@@ -185,13 +186,13 @@ Describes the name and operational dates and times of the facilities
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
 facilities	|		| Array that contains one object per facility in the system as defined below
-\- facility_id        | Yes         | 
-\- name        | Yes         | 
-\- hours_of_operation              | Yes         | 
-\- direction        | Yes         | 
-\- days_of_week          | Yes         | 
-\- start_date        | Yes         | 
-\- end_date          | Yes         | 
+\- facility_id        | Yes         | Unique id for the facility.
+\- name        | Yes         | Toll authority name for the specific facility.
+\- hours_of_operation              | Yes         | Hours of operation for the facility.
+\- direction        | Yes         | Direction of travel for the facility.
+\- days_of_week          | Yes         | Days of the week for operations of the facility.
+\- start_date        | Yes         | When the facility opened.
+\- end_date          | Yes         | When the facility closes.
 
 
 Example:
@@ -229,12 +230,12 @@ Real time prices displayed on toll signs
 
 Field Name            | Required  | Defines
 --------------------- | ----------| ----------
-facilities              | Yes       | Array that contains one object per facility in the system as defined below
-\- facility_id          | Yes       | Unique identifier of a facility/plaza (see toll_facility.json)
-\- interval_starting | Yes       | At which time the given price starts being live
-\- pricing_module  | Yes  | Price displayed to users.  Possible values can be: a price or FREE TO ALL or HOV ONLY
-\- message_module | Yes       | 
-\- algorithm_mode  | Optional  | 
+facilities              | Yes       | Array that contains one object per facility in the system as defined below.
+\- facility_id          | Yes       | Unique identifier of a facility/plaza (see toll_facility.json).
+\- interval_starting | Yes       | At which time the given price starts being live.
+\- pricing_module  | Yes  | Price displayed to users.  Possible values can be: a price or FREE TO ALL or HOV ONLY.
+\- message_module | Yes       | Message on the toll sign, delivered in the real time format.
+\- algorithm_mode  | Optional  | How the price of the facility is created, e.g EL Speed, GP, Speed.
 ```json
 {
   "last_updated": 1502829544,

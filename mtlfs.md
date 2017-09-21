@@ -150,7 +150,7 @@ Describes the system including System operator, URLs, contact info, time zone.  
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-tolled_vehicles        | Yes         | Types of vehicles tolled, e.g. SOV - Single Occupant Vehicle, HOV 2 - Two occupant vehicle.
+vehicle_type        | Yes         | Types of vehicles tolled, e.g. SOV - Single Occupant Vehicle, HOV2 - Two occupant vehicle.
 tolling_methods        | Yes         | How the tolls are collected, e.g. Transponder, Toll Booth, License Plate.
 payment_options              | Yes         | Name of the backend tolling payment system, e.g. Fastrak, EZPass. 
 toll_periods        | Yes         | How the toll periods are being calculated from the system algorithm.
@@ -167,7 +167,7 @@ Example:
  "ttl": 60,
  "data":
  {
-  "tolled_vehicles": "SOV",
+  "vehicle_type": "SOV",
   "tolling_methods": "transponder",
   "payment_options": "FasTrak",
   "toll_periods": "dynamic",
@@ -186,7 +186,7 @@ Describes the name and operational dates and times of the facilities
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
 facilities	|		| Array that contains one object per facility in the system as defined below
-\- facility_id        | Yes         | Unique id for the facility.
+\- facility_id        | Yes         | Unique identifier of a facility/plaza.
 \- name        | Yes         | Toll authority name for the specific facility.
 \- hours_of_operation              | Yes         | Hours of operation for the facility.
 \- direction        | Yes         | Direction of travel for the facility.
@@ -266,12 +266,12 @@ Describes the lane types of the facility
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-facilities        | Yes         | 
-\- facility_id        | Yes         | 
-\- facility_type        | Yes         | 
-\- lane_type              | Yes         | 
-\- facility_lane        | Yes         | 
-\- facility_access          | Yes         | 
+facilities        | Yes         |  Array that contains one object per facility in the system as defined below.
+\- facility_id        | Yes         | Unique identifier of a facility/plaza.
+\- facility_type        | Yes         | Type of managed or tolled facility, e.g. Express Lanes, Bridge, Tunnel.
+\- lane_type              | Yes         | Type of lane used for tolling in the facility, e.g. Carpool - HOV  Lane, AL - All Lanes, GP - General Purpose Lanes
+\- facility_lane        | Yes         | Actual managed or tolled lane used, e.g. AL - All Lanes, Leftlane - Left Lane,
+\- facility_access          | Yes         | Access into and out of the managed or tolled lanes, e.g. single entry and exit, multiple entries and exits
 
 Example:
 ```json
@@ -283,16 +283,16 @@ Example:
    {
     "facility_id": "CLW",
     "facility_type": "Express Lanes",
-    "lane_type": "HOV2+",
+    "lane_type": "Carpool Lane",
     "facility_lane": "Left Lane",
-    "facility_access": "Lane Entry and Exit"
+    "facility_access": "Single Entry and Exit"
    },
    {
     "facility_id": "FSE",
     "facility_type": "Express Lanes",
-    "lane_type": "HOV2+",
+    "lane_type": "Carpool Lane",
     "facility_lane": "Left Lane",
-    "facility_access": "Lane Entry and Exit"
+    "facility_access": "Single Entry and Exit"
    }
   ]
  }
@@ -305,15 +305,15 @@ Describes entrances and exits to the facility
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-facilities        | Yes         | 
-\- facility_id        | Yes         | 
-\- destination_id        | Yes         | 
-\- agency_url              | Yes         | 
-\- CTOC_Entry_Plaza_ID        | Yes         | 
-\- CTOC_Exit_Plaza_ID          | Yes         | 
-\- toll_destination        | Yes         | 
-\- destination_description        | Optional         | 
-\- destination_type        | Optional         | 
+facilities        | Yes         |  Array that contains one object per facility in the system as defined below.
+\- facility_id        | Yes         | Unique identifier of a facility/plaza.
+\- destination_id        | Yes         | Unique identifier of the facility destination or options of destinations.
+\- agency_url              | Yes         | Contains the URL of the agency. The value must be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
+\- CTOC_Entry_Plaza_ID        | Yes         | Unique identifier from the California Toll Operators Commission (CTOC), this validates the agency facility_id.
+\- CTOC_Exit_Plaza_ID          | Yes         | Unique identifier from the CTOC, this validates the agency destination_id.
+\- toll_destination        | Yes         | Actual Freeway exit or destination exit from the managed or tolled facility.
+\- destination_description        | Optional         | Specific description of actual location of the destination including, street name and city.
+\- destination_type        | Optional         | Type of facility the destination is, e.g. Freeway, local road, 
 
 Example:
 ```json
@@ -350,12 +350,13 @@ A geojson file that gives points within a a FeatureCollection that describes whe
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-facility_id        | Yes         | 
-sign_id        | Yes         | 
-geometry              | Yes         | 
-sign_type        | Yes         | 
-crs              | Yes         | 
-toll_destination  | Yes         | 
+type		| Yes		|  Type of geometric object, e.g. Feature, FeatureCollection. If it is a Featurecollection there will be multiple feature types. This type is a FeatureCollection.
+facility_id        | Yes         | Unique identifier of a facility/plaza.
+sign_id        | Yes         | Unique identifier of the actual sign per toll authority as-built files.
+crs              | Yes         | Coordinate system used for the geometry longitude and latitude.
+geometry              | Yes         | Type of geometry used for the location of the sign, e.g.  Point, LineString, Polygon, MultiPoint, MultiLineString, and MultiPolygon.  This geometry is a Point. 
+sign_type        | Yes         | Type of sign in the facility, e.g. Dynamic Toll Rate, Dynamic Messages, Changeable Message Sign
+toll_destination  | Yes         | Actual Freeway exit or destination exit from the managed or tolled facility.
 
 
 Example:
@@ -366,10 +367,12 @@ A geojson file that is the centerline of the facility that would interact with v
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-facility_id        | Yes         | 
-properties        | Yes         | 
-geometry              | Yes         | 
-crs              | Yes         | 
+type		| Yes		|  Type of geometric object, e.g. Feature, FeatureCollection. If it is a Featurecollection there will be multiple feature types. This type is a FeatureCollection.
+facility_id        | Yes         | Unique identifier of a facility/plaza.
+properties        | Yes         | Description of the feature collection
+crs              | Yes         | Coordinate system used for the geometry longitude and latitude.
+geometry              | Yes         | Type of geometry used for the location of the sign, e.g.  Point, LineString, Polygon, MultiPoint, MultiLineString, and MultiPolygon.  This geometry is a LineString. 
+
 
 Example:
 [facility_geom.json](draft_files/facility_geom.json)
@@ -379,10 +382,12 @@ A geojson file that gives points within a a FeatureCollection that describes whe
 
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
-facility_id        | Yes         | 
-toll_gantry        | Yes         | 
-geometry              | Yes         | 
-crs              | Yes         | 
+type		| Yes		|  Type of geometric object, e.g. Feature, FeatureCollection. If it is a Featurecollection there will be multiple feature types. This type is a FeatureCollection.
+facility_id        | Yes         |  Unique identifier of a facility/plaza.
+toll_gantry        | Yes         | Identifies the direction of travel for the vehicles using this gantry.
+crs              | Yes         | Coordinate system used for the geometry longitude and latitude.
+geometry              | Yes         | Type of geometry used for the location of the sign, e.g.  Point, LineString, Polygon, MultiPoint, MultiLineString, and MultiPolygon.  This geometry is a Point.
+toll_destination  | Yes         | Actual Freeway exit or destination exit from the managed or tolled facility.
 
 
 Example:

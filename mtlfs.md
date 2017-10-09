@@ -83,22 +83,34 @@ Example:
           "name": "general_toll_info",
           "url": "https://mtlfs.vta.org/mtlfs/general_toll_info.json"
         },
-	{
-          "name": "toll_signs",
-          "url": "https://mtlfs.vta.org/mtlfs/toll_signs.json"
-        },
         {
           "name": "toll_periods",
           "url": "https://mtlfs.vta.org/mtlfs/toll_periods.json"
         },
-        {
+	{
+	  "name": "toll_status",
+	  "url": "https://mtlfs.vta.org/mtlfs/toll_status.json"
+	},
+	{
           "name": "toll_facility",
           "url": "https://mtlfs.vta.org/mtlfs/toll_facility.json"
         },
         {
           "name": "toll_destination",
           "url": "https://mtlfs.vta.org/mtlfs/toll_destination.json"
-        }
+        },
+        {
+          "name": "toll_signs_geom",
+          "url": "https://mtlfs.vta.org/mtlfs/toll_signs_geom.json"
+        },
+        {
+          "name": "facility_geom",
+          "url": "https://mtlfs.vta.org/mtlfs/facility_geom.json"
+        },
+        {
+          "name": "gantry_geom",
+          "url": "https://mtlfs.vta.org/mtlfs/gantry_geom.json"
+        }	
 	]
     }
   }
@@ -175,7 +187,7 @@ Example:
   "maximum_toll": "8.00",
   "toll_currency": "USD",
   "toll_exemptions": [ "HOV2", "Motorbike", "transit", "greensticker", "whitesticker" ],
-  "toll_restrictions": "none",
+  "toll_restrictions": "none"
  }
 }
 ```
@@ -205,7 +217,7 @@ Example:
    {
     "facility_id": "CLW",
     "name": "Calaveras Westbound",
-    "hours_of_operation": [[0500, 1000], [1500, 1900]],
+    "hours_of_operation": [[500, 1000], [1500, 1900]],
     "direction": "westbound",
     "days_of_week": "MTWRF",
     "start_date": "20120325",
@@ -214,7 +226,7 @@ Example:
    {
     "facility_id": "FSE",
     "name": "First Street Eastbound",
-    "hours_of_operation": [[0500, 0900], [1500, 1900]],
+    "hours_of_operation": [[500, 900], [1500, 1900]],
     "direction": "northbound",
     "days_of_week": "MTWRF",
     "start_date": "20120325",

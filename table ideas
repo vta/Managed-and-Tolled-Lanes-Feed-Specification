@@ -20,8 +20,8 @@ location facility
  - type (bridge, express lane, ramp, toll road, tunnel, reversible lanes)
 
 Facility_id: [
-  {id : "CLW", label : "calaveras westbound", direction: "SB" },
-  {id : "FSE", label : "first street eastbound", direction: "WB" }
+  {id : "CLW", label : "calaveras westbound", direction: "WB" },
+  {id : "FSE", label : "first street eastbound", direction: "EB" }
 ]
 
 facility_type:
@@ -41,7 +41,7 @@ facility_corridor_shapes (polyline)
  - shape_pt_sequence
  - shape_dist_traveled
  
-facilty_lane_type (ID - Lane Type)
+facilty_lane_type (ID - Lane Type)  These could all be renamed, Lane 1, 2, 3, 4, 5, ....
 
 - AL-All Lanes
 - LEFTLANE-Left Lane
@@ -57,17 +57,17 @@ facilty_lane_type (ID - Lane Type)
 
 toll_rates (describe dollar amounts, optional, used for fixed toll rates, based on vehicle axles)
  - consume toll rate API for real time updates - https://github.com/vta/expresslanes-api 
- - update time rate, e.g. 5 minutes
+ - update time rate, e.g. 5 minutes  -  normally referred to as interval
  - toll rate range, e.g. $0.50 - $7.00
  
 tolling_method (tolling application and collection)
 - CASH - Cash
 - PAYBYPLATE - Pay by (License) Plate
-- FASTRAK - FasTrak
+- FASTRAK - FasTrak    -   maybe AVI, automatic vehicle identification, tag reads, Fastrak
 - TOLLBOOTH - Toll Booth
  
 toll_rate_update
-- Toll rate definition, HOV 2+, HOV 3+
+- Toll rate definition, HOV 2+, HOV 3+, CAV, clean air vehicle
 - Toll rules
 - Zones
 - Alerts or closures
@@ -87,7 +87,7 @@ transponder_type
 - manufacturer
 
 vehicle_exceptions
- - electric (green (plugin hybrid) or white (cng, all electric))
+ - electric (green (plugin hybrid) or white (cng, all electric)) - CAV
  - carpool (2+, 3+)
  - motorcycle
  - transit (busses)
@@ -105,7 +105,7 @@ vehicle_type (ID - Vehicle Type)
 - BUS - Bus/Buses
 - VANPOOL - Vanpools
 - LOWEV - Low Emission Vehicles
-- HIGHEV - High Emission Vehicles
+- HIGHEV - High Emission Vehicles - refer to DMV
 - TRAILER - Trailers
 - AXLE2 - 2-Axle Vehicles
 - AXLE3 - 3-Axle Vehicles

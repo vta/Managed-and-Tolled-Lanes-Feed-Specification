@@ -4,4 +4,4 @@ Proposal for a schema that comprise the Managed and Tolled Lanes Tolling Feed Sp
 
 Draft schema at [mtlfs.md](mtlfs.md).
 
-Example implementation in [VTA Express Lanes API](https://github.com/vta/expresslanes-api), viewable at [mtlfs.vta.org](mtlfs.vta.org).
+Example implementation in [VTA Express Lanes API](https://github.com/vta/expresslanes-api), viewable at [mtlfs.vta.org](https://mtlfs.vta.org).
